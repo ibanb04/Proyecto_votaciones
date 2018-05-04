@@ -16,9 +16,9 @@ class CreateMesaTable extends Migration
         Schema::create('mesa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',15);
-            $table->integer('id_lugar')->unsigned();
+            $table->integer('lugar_id')->unsigned();
             $table->timestamps();
-            $table->foreign('id_lugar')->references('id')->on('lugar')->onDelete('cascade');
+            $table->foreign('lugar_id')->references('id')->on('lugar')->onDelete('cascade');
         });
     }
 

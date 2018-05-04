@@ -9,7 +9,7 @@ class Candidato extends Model
   protected $table = 'candidato';
   protected $primaryKey = 'id';
   protected $fillable = [
-      'id','numero','id_organo','foto'
+      'id','numero','organo_id','foto'
   ];
   public function votos(){
     return $this->hasMany('App\Voto');

@@ -16,9 +16,9 @@ class CreateProgramaTable extends Migration
         Schema::create('programa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',50);
-            $table->integer('id_facultad')->unsigned();
+            $table->integer('facultad_id')->unsigned();
             $table->timestamps();
-            $table->foreign('id_facultad')->references('id')->on('facultad')->onDelete('cascade');
+            $table->foreign('facultad_id')->references('id')->on('facultad')->onDelete('cascade');
         });
     }
 

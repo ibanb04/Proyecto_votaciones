@@ -9,7 +9,7 @@ class Programa extends Model
   protected $table = 'programa';
   protected $primaryKey = 'id';
   protected $fillable = [
-      'id','nombre','id_facultad'
+      'id','nombre','facultad_id'
   ];
   public function users(){
     return $this->hasMany('App\User');

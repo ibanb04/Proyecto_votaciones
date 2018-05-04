@@ -9,7 +9,7 @@ class Voto extends Model
   protected $table = 'voto';
   protected $primaryKey = 'id';
   protected $fillable = [
-      'id','id_mesa','id_candidato','cantidad'
+      'id','mesa_id','candidato_id','cantidad'
   ];
 
   public function mesa(){

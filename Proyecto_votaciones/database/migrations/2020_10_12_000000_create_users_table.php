@@ -22,18 +22,18 @@ class CreateUsersTable extends Migration
             $table->string('apellido2',30);
             $table->string('email',50)->unique();
             $table->string('password',30);
-            $table->string('id_rol',1);
-            $table->integer('id_programa')->unsigned()->nullable();
+            $table->string('rol_id',1);
+            $table->integer('programa_id')->unsigned()->nullable();
             $table->enum('tipo',['Estudiante','Docente','Egresado'])->nullable();
             $table->enum('estado',[1,2,3,4])->nullable();
-            $table->integer('id_mesa')->unsigned()->nullable();
+            $table->integer('mesa_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 
             // $table->primary('codigo');
-            $table->foreign('id_rol')->references('id')->on('rol')->onDelete('cascade');
-            $table->foreign('id_programa')->references('id')->on('programa')->onDelete('cascade');
-            $table->foreign('id_mesa')->references('id')->on('mesa');
+            $table->foreign('rol_id')->references('id')->on('rol')->onDelete('cascade');
+            $table->foreign('programa_id')->references('id')->on('programa')->onDelete('cascade');
+            $table->foreign('mesa_id')->references('id')->on('mesa');
         });
     }
 

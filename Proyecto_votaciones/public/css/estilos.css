@@ -22,3 +22,13 @@ img.foto {
 .waves-effect.waves-blue .waves-ripple {
   	background-color: rgba(54,106,225,.9);
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }

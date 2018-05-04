@@ -17,12 +17,12 @@ class CreateCandidatoTable extends Migration
             // $table->increments('id');
             $table->integer('id')->unsigned();
             $table->string('numero',5);
-            $table->integer('id_organo')->unsigned();
+            $table->integer('organo_id')->unsigned();
             $table->string('foto');
             $table->timestamps();
             $table->primary('id');
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_organo')->references('id')->on('organo')->onDelete('cascade');
+            $table->foreign('organo_id')->references('id')->on('organo')->onDelete('cascade');
         });
     }
 

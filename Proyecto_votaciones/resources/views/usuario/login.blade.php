@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 
-	<link rel="stylesheet" href="resources/css/materialize.css">
-	<link rel="stylesheet" href="resources/css/estilos.css">
-	<link rel="stylesheet" href="resources/css/material-icons.css">
-	<script defer src="resources/js/fontawesome-all.js"></script>
+	<link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/material-icons.css') }}">
+	<script defer src="{{ asset('js/fontawesome-all.js') }}"></script>
 
 </head>
 <body>
@@ -30,15 +30,22 @@
 				<div class="input-field">
 					<input type="password" name="password" id="password" required="required">
 					<label for="password">Contraseña:</label>
-				</div>						
+				</div>	
 			</div>
 			<div class="card-action center-align ">
 				<button type="submit" name='submit' value="Submit" class="btn btn-large waves-effect waves-light blue hoverable pulse" id="btnLogin">Ingresar</button>
 			</div>
 		</form>
 	</div>
+					@if ($errors->has('email'))
+						<div class="card-panel red white-text">
+	                   		<strong>{{ $errors->first('email') }}</strong>
+						</div>					
+	                @endif
 </div>
 </section>
+
+	@include('template.modules.footer')
 
 	<div id="myModal" class="modal">
 		<div class="modal-content">
@@ -50,8 +57,8 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="resources/js/materialize.js"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -60,6 +67,8 @@
 			
 		});
 	</script>
+	
+
 
 </body>
 

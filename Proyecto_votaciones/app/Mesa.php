@@ -9,7 +9,7 @@ class Mesa extends Model
   protected $table = 'mesa';
   protected $primaryKey = 'id';
   protected $fillable = [
-      'id','nombre','id_lugar'
+      'id','nombre','lugar_id'
   ];
   public function lugar(){
     return $this->belongsTo('App\Lugar');

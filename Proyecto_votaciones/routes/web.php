@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'Controller@custom_login',
+	'as' => 'usuario.login'
+]);
 
 Auth::routes();
 

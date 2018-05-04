@@ -12,6 +12,6 @@ class Organo extends Model
       'id','nombre','descripcion'
   ];
   public function candidatos(){
-    return $this->hasMany('App/Candidato');
+    return $this->hasMany('App\Candidato');
   }
 }

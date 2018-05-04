@@ -12,6 +12,6 @@ class Lugar extends Model
       'id','nombre'
   ];
   public function mesas(){
-    return $this->hasMany('App/Mesa');
+    return $this->hasMany('App\Mesa');
   }
 }

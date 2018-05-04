@@ -22,10 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('apellido2',30);
             $table->string('email',50)->unique();
             $table->string('password',30);
-            $table->integer('id_rol')->unsigned();
-            $table->integer('id_programa')->unsigned();
-            $table->integer('id_mesa')->unsigned();
-            $table->integer('estado')->default(0);
+            $table->string('id_rol',1);
+            $table->integer('id_programa')->unsigned()->nullable();
+            $table->enum('tipo',['Estudiante','Docente','Egresado'])->nullable();
+            $table->enum('estado',[1,2,3,4])->nullable();
+            $table->integer('id_mesa')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 

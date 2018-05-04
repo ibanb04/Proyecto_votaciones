@@ -13,6 +13,6 @@ class Rol extends Model
       'id','nombre','descripcion'
   ];
   public function users(){
-    return $this->hasMany('App/User');
+    return $this->hasMany('App\User');
   }
 }

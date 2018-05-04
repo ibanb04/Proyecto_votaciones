@@ -12,13 +12,13 @@ class Candidato extends Model
       'id','numero','id_organo','foto'
   ];
   public function votos(){
-    return $this->hasMany('App/Voto');
+    return $this->hasMany('App\Voto');
   }
   public function organo(){
-    return $this->belongsTo('App/Organo');
+    return $this->belongsTo('App\Organo');
   }
   public function user(){
-    return $this->belongsTo('App/User');
+    return $this->belongsTo('App\User');
   }
 
 }

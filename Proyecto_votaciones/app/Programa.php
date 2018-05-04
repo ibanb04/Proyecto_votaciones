@@ -12,9 +12,9 @@ class Programa extends Model
       'id','nombre','id_facultad'
   ];
   public function users(){
-    return $this->hasMany('App/User');
+    return $this->hasMany('App\User');
   }
   public function facultad(){
-    return $this->belongsTo('App/Facultad');
+    return $this->belongsTo('App\Facultad');
   }
 }

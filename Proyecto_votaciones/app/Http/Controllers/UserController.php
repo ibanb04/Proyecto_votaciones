@@ -20,6 +20,7 @@ class UserController extends Controller
    			return redirect()->route('admin');
 
     	}elseif (Auth::User()->rol_id == 'V') {
+            
     		return redirect()->route('votante');
     	}
     	echo "No se encuentra redireccion para este usuario";

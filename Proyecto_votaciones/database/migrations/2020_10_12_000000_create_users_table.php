@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido1',30);
             $table->string('apellido2',30);
             $table->string('email',50)->unique();
-            $table->string('password',30);
+            $table->string('password');
             $table->string('rol_id',1);
             $table->integer('programa_id')->unsigned()->nullable();
             $table->enum('tipo',['Estudiante','Docente','Egresado'])->nullable();

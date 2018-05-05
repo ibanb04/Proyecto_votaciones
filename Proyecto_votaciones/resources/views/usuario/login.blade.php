@@ -47,16 +47,6 @@
 
 	@include('template.modules.footer')
 
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<h4 id="titulo-modal"></h4>
-			<p class="flow-text" id="mensaje-modal"></p>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class="modal-action modal-close waves-effect waves-purple btn-flat">Cerrar</a>
-		</div>
-	</div>
-
 	<script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
 

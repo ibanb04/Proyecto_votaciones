@@ -1,6 +1,7 @@
 @extends('template.base')
 
 @section('title', 'Admin')
+@section('title-nav', 'ADMINISTRADOR')
 
 @section('body')
 	<div class="row">
@@ -35,6 +36,7 @@
 	                		<td>{{ $usuario->apellido2 }}</td>
 	                		<td>{{ $usuario->rol->nombre }}</td>
 	                		<td>{{ $usuario->programa->nombre }}</td>
+	                		<td>{{ $usuario->mesa->nombre }}</td>
 	                	</tr>
 	                @endforeach
 	            </tbody>
@@ -42,21 +44,4 @@
 	    </div>
 	     <div class="col m2"></div>
 	</div>
-	<div class="container">
-		
-
-	<div id="modal-confirmarEliminacion" class="modal">
-	     <div class="modal-content center-align">
-	        <h4> ¿Estás seguro que quieres eliminar a este usuario? </h4>
-	     </div>
-	     <div class="modal-footer">
-	         <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
-	         <a href="#!" class="modal-action modal-close waves-effect waves-light btn #ef5350 red lighten-1" id="btnEliminar">Aceptar</a>
-	   </div>
-	  </div>
-
-
-
-	</div>
-
 @endsection

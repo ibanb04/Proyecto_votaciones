@@ -17,6 +17,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col s12 offset-m1 m10 offset-l3 l6">
+					@if ($errors->has('codigo'))
+						<div class="card-panel red white-text">
+	                   		<strong>{{ $errors->first('codigo') }}</strong>
+						</div>					
+	                @endif
 			<div class="card hoverable" style="background-color: rgba(255,255,255,.9);" id="card-login">
 		<form action="{{ route('login') }}" method="POST" role="form">
  						{{ csrf_field() }}
@@ -37,11 +42,6 @@
 			</div>
 		</form>
 	</div>
-					@if ($errors->has('codigo'))
-						<div class="card-panel red white-text">
-	                   		<strong>{{ $errors->first('codigo') }}</strong>
-						</div>					
-	                @endif
 </div>
 </section>
 
@@ -52,8 +52,8 @@
 
 	<script type="text/javascript">
 		$(function(){
-			$('#codigo').val("2015114010");	
-			$('#password').val("123");	
+			$('#codigo').val("2015114020");	
+			$('#password').val("1234");	
 			
 		});
 	</script>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Organo;
+use App\Candidato;
+use DB;
 
 class UserController extends Controller
 {
@@ -38,8 +41,11 @@ class UserController extends Controller
 
 
     public function votante_index()
-    {
-    
-    	return view('usuario.votante.inicioVotante');
+    {    
+        
+        $organos = Organo::all();
+        $candidatos = DB::table('organo')->join('candidato', 'organo.id', '=', 'candidato.organo_id')->join('users', 'candidato.id', '=', 'users.codigo')->select('users.nombre1','users.nombre2','users.apellido1','users.apellido2', 'candidato.numero','candidato.organo_id', 'organo.nombre')->get();
+        //dd($candidatos);
+    	return view('usuario.votante.inicioVotante')->with('organos', $organos)->with('candidatos', $candidatos);
     }
 }

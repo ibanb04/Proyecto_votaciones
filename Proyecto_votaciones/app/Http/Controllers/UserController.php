@@ -44,8 +44,9 @@ class UserController extends Controller
     {    
         
         $organos = Organo::all();
-        $candidatos = DB::table('organo')->join('candidato', 'organo.id', '=', 'candidato.organo_id')->join('users', 'candidato.id', '=', 'users.codigo')->select('users.nombre1','users.nombre2','users.apellido1','users.apellido2', 'candidato.numero','candidato.organo_id', 'organo.nombre')->get();
-        //dd($candidatos);
-    	return view('usuario.votante.inicioVotante')->with('organos', $organos)->with('candidatos', $candidatos);
+     //    $candidatos = DB::table('organo')->join('candidato', 'organo.id', '=', 'candidato.organo_id')->join('users', 'candidato.id', '=', 'users.codigo')->select('candidato.id','users.nombre1','users.nombre2','users.apellido1','users.apellido2', 'candidato.numero','candidato.organo_id', 'organo.nombre')->get();
+     //    //dd($candidatos);
+    	// return view('usuario.votante.inicioVotante')->with('organos', $organos)->with('candidatos', $candidatos);
+        return view('usuario.votante.inicioVotante')->with('organos', $organos);
     }
 }

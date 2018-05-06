@@ -24,11 +24,24 @@ img.foto {
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+	flex: 1 0 auto;
+}
+
+.card-tabs > .tabs > li > a {
+	color: lightgrey;
+}
+.card-tabs > .tabs > li > a:hover{
+	color: white;
+}
+.card-tabs > .tabs > li > a.active {
+	color: white;
+}
+li.indicator {
+	background-color: white !important;
+}

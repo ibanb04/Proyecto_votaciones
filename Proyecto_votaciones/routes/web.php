@@ -29,7 +29,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 		'uses' => 'UserController@admin_index',
 		'as' => 'admin'
 	]);
-
+	Route::group(['prefix' => 'usuario'], function()
+ 	{   
+ 		
+		Route::get('autorizar/{codigo}', 'AdminController@autorizar_usuario')->name('usuario.autorizar');
+		Route::get('desautorizar/{codigo}', 'AdminController@desautorizar_usuario')->name('usuario.desautorizar');
+  	});
 
 });
 

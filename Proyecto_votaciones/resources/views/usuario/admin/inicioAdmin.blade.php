@@ -37,6 +37,16 @@
 	                		<td>{{ $usuario->rol->nombre }}</td>
 	                		<td>{{ $usuario->programa->nombre }}</td>
 	                		<td>{{ $usuario->mesa->nombre }}</td>
+	                		<td>
+ 									@if($usuario->estado == 1)
+ 										<a href="{{ route('usuario.autorizar', $usuario->codigo) }}" class="waves-effect waves-light btn btnAutorizacion">Autorizar</a>
+ 									@elseif($usuario->estado == 2)
+ 										<a href="{{ route('usuario.desautorizar', $usuario->codigo) }}" class="waves-effect waves-light grey btn btnAutorizacion">desautorizar</a>
+ 									@else
+ 										{{ $usuario->estado }}
+ 									@endif
+ 
+ 								</td>
 	                	</tr>
 	                @endforeach
 	            </tbody>

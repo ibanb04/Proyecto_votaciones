@@ -16,7 +16,7 @@ class CreateVotoTable extends Migration
         Schema::create('voto', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('mesa_id')->unsigned();
-            $table->string('candidato_id',12)->unique();
+            $table->string('candidato_id',12);
             $table->timestamps();
             $table->foreign('mesa_id')->references('id')->on('mesa');
             $table->foreign('candidato_id')->references('id')->on('candidato');

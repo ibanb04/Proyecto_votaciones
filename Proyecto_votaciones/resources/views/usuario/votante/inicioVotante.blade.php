@@ -20,7 +20,7 @@
 			  	@foreach($organos as $organo)
 			  		<div id="organo-{{$organo->id}}" class="col s12">
 			  			@foreach($organo->candidatos as $candidato)
-			  				<div class="card-panel">{{$candidato->id}}</div>
+			  				<div class="card-panel">{{$candidato->user->nombre1}}</div>
 			  			@endforeach
 			  		</div>
 				@endforeach

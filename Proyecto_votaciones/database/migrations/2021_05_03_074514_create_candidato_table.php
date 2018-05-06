@@ -15,11 +15,12 @@ class CreateCandidatoTable extends Migration
     {
         Schema::create('candidato', function (Blueprint $table) {
             // $table->increments('id');
-            $table->string('id',12)->unique();
+            $table->string('id',12);
             $table->string('numero',5);
             $table->integer('organo_id')->unsigned();
             $table->binary('foto');
             $table->timestamps();
+            
             $table->primary('id');
             $table->foreign('id')->references('codigo')->on('users')->onDelete('cascade');
             $table->foreign('organo_id')->references('id')->on('organo')->onDelete('cascade');

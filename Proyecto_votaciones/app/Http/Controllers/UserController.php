@@ -53,7 +53,7 @@ class UserController extends Controller
     }
 
     public function votar(Request $request){
-    
+        // dd($request->all());
         foreach ($request->all() as $key => $candidato_id){
             if ($key != "_token" && $key != "mesa_id"){
                 echo $candidato_id.'<br>';

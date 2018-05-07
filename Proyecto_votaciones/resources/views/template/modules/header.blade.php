@@ -3,14 +3,14 @@
      <!-- Dropdown Structure -->
 			<ul id="dropdown1" class="dropdown-content">
 
-			  <li><a href="#!"> <i class="fas fa-user"></i>{{ Auth::user()->codigo }}  </a>
+			  <li><a class="blue-text" href="#!"><i class="fas fa-user"></i> {{ Auth::user()->codigo }}</a>
 
 			  </li>
 
-			  <li><a href="#!"><i class="fas fa-cog"></i> config</a></li>
+			  <li><a class="blue-text" href="#!"><i class="fas fa-cog"></i> config</a></li>
 			  <li class="divider"></li>
 			  <li>
-			  	<a href="{{ route('logout') }}"
+			  	<a class="blue-text" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                     salir <i class="fas fa-sign-out-alt"></i>

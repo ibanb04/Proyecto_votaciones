@@ -43,6 +43,17 @@
 			  					</div>
 			  				</div>
 			  			@endforeach
+			  			<!-- <div class="col s12 m4">
+		  					<div class="card hoverable waves-effect waves-blue z-depth-3 card-candidato" id="0" data-organo="{{$organo->id}}">
+		  						<div class="card-image">
+		  							<img src="{{ asset('imagenes/candidatos/blanco.jpg') }}" alt="">	
+		  						</div>
+		  						<div class="card-content center-align">
+		  							<big>Voto en Blanco <br><br></big>
+		  						</div>
+							
+		  					</div>
+		  				</div> -->
 			  			</div>
 			  		</div>
 				@endforeach
@@ -74,6 +85,11 @@
 @section('extrajs')
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('.dropdown-button').dropdown({
+		      constrainWidth: false,
+		      // belowOrigin: true
+		    }
+		  );
 
 			seleccionados = new Object();
 
@@ -82,9 +98,15 @@
 				var candidato_id = este.attr('id');
 				var organo_id = este.attr('data-organo');
 
+				// console.log(seleccionados);
+
+				if (seleccionados[parseInt(organo_id)] != ''){
+					var string_id = '#'+seleccionados[organo_id];
+					$(string_id).removeClass('blue');
+					console.log($(string_id).removeClass('blue'));
+				}
+				este.addClass('blue');
 				seleccionados[organo_id] = candidato_id;
-				console.log(seleccionados);
-				// console.log(candidato_id,"- organo",organo_id);
 			});
 
 			$('#btnVotar').click(function(){
@@ -94,7 +116,7 @@
 					var formulario = $('#candidatosSeleccionados');
 					for (var i in seleccionados){
 						var input = $('<input/>', {
-							'type': 'number',
+							'type': 'text',
 							'name': 'candidato_'+parseInt(i),
 							'value': seleccionados[i]
 						});

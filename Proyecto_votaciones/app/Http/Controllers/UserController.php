@@ -7,7 +7,9 @@ use Auth;
 use App\User;
 use App\Organo;
 use App\Candidato;
+use App\Voto;
 use DB;
+use Redirect;
 
 class UserController extends Controller
 {
@@ -49,4 +51,42 @@ class UserController extends Controller
     	// return view('usuario.votante.inicioVotante')->with('organos', $organos)->with('candidatos', $candidatos);
         return view('usuario.votante.inicioVotante')->with('organos', $organos);
     }
+
+    public function votar(Request $request){
+    
+        foreach ($request->all() as $key => $candidato_id){
+            if ($key != "_token" && $key != "mesa_id"){
+                echo $candidato_id.'<br>';
+                $voto = new Voto();
+                $voto->mesa_id = $request->mesa_id;
+                $voto->candidato_id = $candidato_id;
+                $voto->save();
+            }
+        }
+
+        $usuario = User::find(Auth::User()->codigo);
+        $usuario->estado = '4';
+        $usuario->save();
+        // dd($usuario);
+
+        return Redirect()->route('votante');
+        
+    }
+
+    public function autorizar($codigo){
+        $usuario = User::find($codigo);
+        $usuario->estado = '2';
+        $usuario->save();
+
+        return Redirect::to('/admin');
+     }
+
+     public function desautorizar($codigo){
+        $usuario = User::find($codigo);
+        $usuario->estado = '1';
+        $usuario->save();
+
+        return Redirect::to('/admin');
+     }
+
 }

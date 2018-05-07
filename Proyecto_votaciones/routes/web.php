@@ -45,6 +45,11 @@ Route::group(['prefix' => 'votante', 'middleware' => 'auth'], function(){
 		'as' => 'votante'
 	]);
 
+	Route::post('/votar', 'UserController@votar')->name('votar');
+
+	Route::get('autorizar/{codigo}', 'UserController@autorizar')->name('autorizar');
+	
+	Route::get('desautorizar/{codigo}', 'UserController@desautorizar')->name('desautorizar');
 
 });
 

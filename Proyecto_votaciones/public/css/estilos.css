@@ -45,3 +45,16 @@ main {
 li.indicator {
 	background-color: white !important;
 }
+
+.card .card-content {
+	padding: 5px;
+}
+
+.card-image > img {
+	/*width: 100px;*/
+	/*height: 100px;*/
+}
+
+.waves-effect.waves-blue .waves-ripple {
+    background-color: rgba(37, 123, 222, 0.65);
+}

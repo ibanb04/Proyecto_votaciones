@@ -8,7 +8,7 @@
 	    <h1 align="center">USUARIOS</h1>
 			<div class="container"> 
 
-				<a href="index.php?action=formUsuario" class="btn waves-effect blue btn waves-light">NUEVO</a>
+				<!-- <a href="index.php?action=formUsuario" class="btn waves-effect blue btn waves-light">NUEVO</a> -->
 			</div>
 	    <div class="col m1"></div>
 	    <div class=" card col m9">
@@ -39,11 +39,11 @@
 	                		<td>{{ $usuario->mesa->nombre }}</td>
 	                		<td>
  									@if($usuario->estado == 1)
- 										<a href="{{ route('usuario.autorizar', $usuario->codigo) }}" class="waves-effect waves-light btn btnAutorizacion">Autorizar</a>
+ 										<a href="{{ route('autorizar', $usuario->codigo) }}" class="blue waves-effect waves-light btn btnAutorizacion">&nbsp;&nbsp;&nbsp;Autorizar&nbsp;&nbsp;&nbsp;&nbsp;</a>
  									@elseif($usuario->estado == 2)
- 										<a href="{{ route('usuario.desautorizar', $usuario->codigo) }}" class="waves-effect waves-light grey btn btnAutorizacion">desautorizar</a>
- 									@else
- 										{{ $usuario->estado }}
+ 										<a href="{{ route('desautorizar', $usuario->codigo) }}" class="red waves-effect waves-light btn btnAutorizacion">desautorizar</a>
+ 									@elseif($usuario->estado == 4)
+ 										Ya votó
  									@endif
  
  								</td>

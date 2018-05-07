@@ -18,7 +18,7 @@ class CreateCandidatoTable extends Migration
             $table->string('id',12);
             $table->string('numero',5);
             $table->integer('organo_id')->unsigned();
-            $table->binary('foto');
+            $table->string('foto');
             $table->timestamps();
             
             $table->primary('id');
